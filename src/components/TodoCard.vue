@@ -3,15 +3,15 @@ import { ref } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useTodoStore } from '../stores/todos';
 
-const todos = useTodoStore();
-const { list, filter } = storeToRefs(todos);
+const store = useTodoStore();
+const { list, filter } = storeToRefs(store);
 const {
   filteredTodos,
   addTodo,
   setFilter,
   toggleTodo,
   removeTodo,
-} = todos;
+} = store;
 
 const text = ref('');
 

@@ -69,6 +69,7 @@ export const useTodoStore = defineStore('todos', () => {
   return {
     list,
     filter,
+    // todos,
     filteredTodos,
     addTodo,
     setFilter,

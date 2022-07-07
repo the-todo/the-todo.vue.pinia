@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue';
+defineProps(['placeholder'])
 const emit = defineEmits(['submit-form']);
 
 const text = ref('');
@@ -20,7 +21,7 @@ const handleSubmit = () => {
     <input
       class="form-control me-2"
       type="search"
-      placeholder="enter todo"
+      :placeholder="placeholder"
       aria-label="Enter todo"
       :value="text"
       @input="handleInput"

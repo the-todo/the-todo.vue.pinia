@@ -19,6 +19,7 @@ const {
   <div class="card">
     <div class="card-header">
       <InputForm
+        placeholder="Enter todo..."
         @submit-form="(text) => addTodo(text)"
       />
     </div>

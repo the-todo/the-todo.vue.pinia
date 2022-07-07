@@ -4,7 +4,7 @@ import { storeToRefs } from 'pinia';
 import { useTodoStore } from '../stores/todos';
 
 const store = useTodoStore();
-const { todos } = storeToRefs(store);
+const { list, filter } = storeToRefs(store);
 const {
   filteredTodos,
   addTodo,
@@ -76,19 +76,19 @@ const handleSubmit = () => {
         <button
           type="button"
           class="btn btn-outline-primary"
-          :class="{active: todos.filter === 'ALL'}"
+          :class="{active: filter === 'ALL'}"
           @click="setFilter('ALL')"
         >All</button>
         <button
           type="button"
           class="btn btn-outline-primary"
-          :class="{active: todos.filter === 'FINISHED'}"
+          :class="{active: filter === 'FINISHED'}"
           @click="setFilter('FINISHED')"
         >Finished</button>
         <button
           type="button"
           class="btn btn-outline-primary"
-          :class="{active: todos.filter === 'UNFINISHED'}"
+          :class="{active: filter === 'UNFINISHED'}"
           @click="setFilter('UNFINISHED')"
         >Unfinished</button>
       </div>

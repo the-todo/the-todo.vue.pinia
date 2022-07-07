@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 import { reactive } from 'vue';
 
-export const useTodoStore = defineStore('todos', () => {
+export const useTodoStore = defineStore('todosaa', () => {
   const todos = reactive({
     list: [
       { id: 1, isFinished: false, text: 'Do Washing' },
@@ -64,12 +64,8 @@ export const useTodoStore = defineStore('todos', () => {
     ];
   };
 
-  const { list, filter } = todos;
-
   return {
-    list,
-    filter,
-    // todos,
+    todos,
     filteredTodos,
     addTodo,
     setFilter,

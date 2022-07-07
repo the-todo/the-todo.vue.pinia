@@ -1,7 +1,7 @@
 <script setup>
-import { ref } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useTodoStore } from '../stores/todos';
+import InputForm from './InputForm.vue';
 
 const store = useTodoStore();
 const { todos } = storeToRefs(store);
@@ -13,39 +13,14 @@ const {
   removeTodo,
 } = store;
 
-const text = ref('');
-
-const handleInput = (e) => {
-  text.value = e.target.value;
-};
-
-const handleSubmit = () => {
-  const { value } = text;
-  addTodo(value);
-  text.value = '';
-};
-
 </script>
 
 <template>
   <div class="card">
     <div class="card-header">
-
-      <form class="d-flex" role="search" @submit.prevent="handleSubmit">
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="enter todo"
-          aria-label="Enter todo"
-          :value="text"
-          @input="handleInput"
-        />
-        <button
-          class="btn btn-outline-success"
-          type="submit"
-        >Add</button>
-      </form>
-
+      <InputForm
+        @submit-form="(text) => addTodo(text)"
+      />
     </div>
 
     <ul class="list-group list-group-flush">

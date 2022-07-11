@@ -17,11 +17,11 @@ export const useTodoStore = defineStore('todosaa', () => {
   const finishedTodos = () => {
     return todos.list.filter(todo => todo.isFinished);
   };
-  
+
   const unfinishedTodos = () => {
     return todos.list.filter(todo => !todo.isFinished);
   };
-  
+
   const filteredTodos = () => {
     const { filter, list } = todos;
     if (filter === 'FINISHED') {
@@ -36,11 +36,11 @@ export const useTodoStore = defineStore('todosaa', () => {
     const { list } = todos;
     list.push({ text, id: Date.now(), isFinished: false });
   };
-  
+
   const setFilter = (filter) => {
     todos.filter = filter;
   };
-  
+
   const toggleTodo = (id) => {
     const { list } = todos;
     const index = list.findIndex(todo => todo.id === id);
@@ -54,7 +54,7 @@ export const useTodoStore = defineStore('todosaa', () => {
       ...list.slice(index + 1),
     ];
   };
-  
+
   const removeTodo = (id) => {
     const { list } = todos;
     const index = list.findIndex(todo => todo.id === id);

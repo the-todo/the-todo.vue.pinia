@@ -47,6 +47,7 @@ const {
         >Del</button>
       </li>
     </ul>
+
     <div class="card-footer">
       <div class="btn-group" role="group" aria-label="Basic outlined example">
         <button
